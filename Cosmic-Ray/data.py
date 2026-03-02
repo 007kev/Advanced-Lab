@@ -40,7 +40,7 @@ counts = np.array([4, 1, 14, 20,        # 0-3
                    47, 30, 45, 49, 42,  # 9-13      I GIVE UP.
                    14, 39, 60,          # 14-16
                    34, 36, 43, 51,      # 17-20
-                   41, 24, 8, 13, 4     #21-25
+                   41, 24, 8, 13, 4     # 21-25
                    ])
 counts_err = np.sqrt(counts)
 
@@ -67,6 +67,10 @@ plt.errorbar(angles_cuts, counts_cuts, counts_err_cuts,
              linestyle="", marker=".", label="Cut Data")
 plt.plot(x2,cy,label="Fitting")
 plt.plot(x2,66*np.cos(x2)**2,label="Model") # why A = 66?
+
+plt.xlabel(r'Angles (radians)'); plt.ylabel(r'Counts')
+plt.title(r'Data Fitted to Model')
+
 plt.legend()
 
 # plotting normalized points [90, 270]
@@ -98,6 +102,9 @@ plt.errorbar(angles_cuts, ncounts_cuts, ncounts_err_cuts,
 plt.plot(x2, model(x2,1), label='Normalized Model')
 # Fits
 plt.plot(x2, model(x2, popt[0]), label='Fit2')
+
+plt.xlabel(r'Angles (radians)'); plt.ylabel(r'Normalized Counts')
+plt.title(r'Normalized Data Fitted to Model')
 
 plt.legend()
 
